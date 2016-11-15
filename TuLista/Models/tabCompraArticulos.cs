@@ -18,6 +18,7 @@ namespace TuLista.Models
         public Nullable<int> idAritulo { get; set; }
         public Nullable<int> idCompra { get; set; }
         public string Cantidad { get; set; }
+        public Nullable<bool> Comprado { get; set; }
     
         public virtual tabArticulo tabArticulo { get; set; }
         public virtual tabCompra tabCompra { get; set; }

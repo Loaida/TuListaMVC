@@ -40,6 +40,7 @@
           <Property Name="idAritulo" Type="int" />
           <Property Name="idCompra" Type="int" />
           <Property Name="Cantidad" Type="varchar" MaxLength="10" />
+          <Property Name="Comprado" Type="bit" />
         </EntityType>
         <EntityType Name="tabTipoArticulos">
           <Key>
@@ -362,6 +363,7 @@
           <NavigationProperty Name="tabArticulo" Relationship="tulistaModel.FK__tabCompra__idAri__49C3F6B7" FromRole="tabCompraArticulos" ToRole="tabArticulo" />
           <NavigationProperty Name="tabCompra" Relationship="tulistaModel.FK__tabCompra__idCom__4AB81AF0" FromRole="tabCompraArticulos" ToRole="tabCompra" />
           <Property Name="Cantidad" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="Comprado" Type="Boolean" />
         </EntityType>
         <Association Name="FK__tabCompra__idAri__49C3F6B7">
           <End Type="tulistaModel.tabArticulo" Role="tabArticulo" Multiplicity="0..1" />
@@ -476,6 +478,7 @@
           <EntitySetMapping Name="tabCompraArticulos">
             <EntityTypeMapping TypeName="tulistaModel.tabCompraArticulos">
               <MappingFragment StoreEntitySet="tabCompraArticulos">
+                <ScalarProperty Name="Comprado" ColumnName="Comprado" />
                 <ScalarProperty Name="Cantidad" ColumnName="Cantidad" />
                 <ScalarProperty Name="idCompra" ColumnName="idCompra" />
                 <ScalarProperty Name="idAritulo" ColumnName="idAritulo" />

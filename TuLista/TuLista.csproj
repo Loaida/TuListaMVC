@@ -272,6 +272,8 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="Imagenes\mcol_cross.png" />
+    <Content Include="Imagenes\mcol_tick.png" />
     <Content Include="Imagenes\unnamed.png" />
     <Content Include="Models\TuListaModel.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>

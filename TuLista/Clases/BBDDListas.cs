@@ -71,6 +71,11 @@ namespace TuLista.Clases
         {
             for (int i = 0; i < articulo.Length; i++)
             {
+                var articuloUsado = (from a in db.tabArticulo where a.Id == articulo[i] select a);
+                foreach(tabArticulo art in articuloUsado)
+                {
+                    art.usos = art.usos + 1;
+                }
                 tabCompraArticulos tac = new tabCompraArticulos();
                 tac.idAritulo = articulo[i];
                 tac.idCompra = idLista;
