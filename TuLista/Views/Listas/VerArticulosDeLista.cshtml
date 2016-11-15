@@ -1,0 +1,17 @@
+﻿@model IEnumerable<TuLista.Models.ArticulosConTipo>
+
+<table class="table">
+    <tr>
+        <th>ID</th>
+        <th>Artículo</th>
+        <th>Tipo</th>
+    </tr>
+    @foreach(var a in Model)
+    {
+        <tr>
+            <td>@a.IdArticulo</td>
+            <td>@a.nombreArticulo</td>
+            <td>@a.nombreTipo</td>
+        </tr>
+    }
+</table>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="5fef2d5e16e94e0abdd56429f80522eb" Name="Diagram1">
+        <EntityTypeShape EntityType="tulistaModel.sysdiagrams" Width="1.5" PointX="0.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="tulistaModel.tabArticulo" Width="1.5" PointX="3" PointY="0.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="tulistaModel.tabCompra" Width="1.5" PointX="5.25" PointY="0.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="tulistaModel.tabTipoArticulos" Width="1.5" PointX="0.75" PointY="1.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="tulistaModel.tabUsuarioCompra" Width="1.5" PointX="7.5" PointY="0.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="tulistaModel.tabUsuarios" Width="1.5" PointX="5.25" PointY="4" IsExpanded="true" />
+        <AssociationConnector Association="tulistaModel.FK__tabArticu__IdTip__276EDEB3" ManuallyRouted="false" />
+        <AssociationConnector Association="tulistaModel.FK__tabUsuari__IdCom__2D27B809" ManuallyRouted="false" />
+        <AssociationConnector Association="tulistaModel.FK__tabUsuari__IdUsu__2E1BDC42" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="tulistaModel.tabCompraArticulos" Width="1.5" PointX="8.375" PointY="3.25" />
+        <AssociationConnector Association="tulistaModel.FK__tabCompra__idAri__49C3F6B7" />
+        <AssociationConnector Association="tulistaModel.FK__tabCompra__idCom__4AB81AF0" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

@@ -1,0 +1,16 @@
+﻿
+@{
+    ViewBag.Title = "CrearNuevaLista";
+}
+
+<h2>Nueva lista</h2>
+
+<form action="/Listas/GuardarTituloYUsuarios">
+    <label for="titulo">Nombre de lista</label>
+    <input type="text" name="titulo"/>
+    <br />
+    @Html.Action("VerUsuarios")
+    <br />
+    <input type="submit" value="Continuar" />
+</form>
+

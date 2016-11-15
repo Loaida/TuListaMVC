@@ -1,0 +1,17 @@
+﻿@model IEnumerable<TuLista.Models.Usuarios>
+@{
+    var i = 0;
+}
+@foreach (var u in Model)
+{
+    if (int.Parse(Session["idUsuario"].ToString()) == u.idUsuario)
+    {
+        <label for="usuario"><input type="checkbox" id="usuario1" name="usuario" value="@u.idUsuario" readonly checked>&nbsp;&nbsp;@u.email</label>
+    }
+    else
+    {
+        <label for="usuario @i"><input type="checkbox" id="usuario @i" name="usuario" value="@u.idUsuario" />&nbsp;&nbsp;@u.email</label>
+    }
+    i++;
+    <br />
+}

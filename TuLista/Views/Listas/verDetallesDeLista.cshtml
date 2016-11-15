@@ -1,0 +1,23 @@
+﻿
+@{
+    ViewBag.Title = "verDetallesDeLista";
+}
+
+<h2>Detalles De Compra</h2>
+<hr />
+@*<a class="btn1" href="/Listas/finalizar">Finalizar lista</a>*@
+<button class="btn" onclick="window.location.href = '/Listas/finalizar'"><span class="glyphicon glyphicon-remove-sign"></span>&nbsp;Finalizar lista&nbsp;</button>
+&nbsp;&nbsp;
+@* .glyphicon .glyphicon-plus *@
+<button class="btn" onclick="window.location.href = '/Listas/editarLista'"><span class="glyphicon glyphicon-plus"></span>&nbsp;Añadir más artículos&nbsp;</button>
+@*<a class="btn1" href="/Listas/editarLista">Añadir más artículos</a>*@
+<hr />
+@Html.Action("VerTituloDeLista")
+@Html.Action("verUsuariosDeLista")
+@Html.Action("VerArticulosDeLista")
+<br />
+<a href="whatsapp://send?text=He añadido una lista nueva http://tulista.gear.host/Listas/verDetallesDeLista?idLista="+ @Session["idCompra"] +"" data-action="share/whatsapp/share"><img border="0" src="~/Imagenes/unnamed.png" width="54px" height="54px"></a>
+&nbsp;&nbsp;
+@* .glyphicon .glyphicon-arrow-left *@
+@*<a class="btn1" href="/Listas/Index">Volver al listado</a>*@
+<button class="btn" onclick="window.location.href = '/Listas/Index'"><span class="glyphicon glyphicon-arrow-left"></span>&nbsp;Volver al listado&nbsp;</button>

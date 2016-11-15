@@ -1,0 +1,15 @@
+﻿
+@{
+    ViewBag.Title = "ContinuarLista";
+}
+
+<h2>ContinuarLista</h2>
+<form action="/Listas/GuardarYContinuar" method="post">
+    @Html.Action("VerArticulosMasUsados")
+    <br />
+    @Html.Action("VerUltimosArticulosAnadidos")
+    <br />
+    <input type="submit" value="Continuar" />
+</form>
+
+

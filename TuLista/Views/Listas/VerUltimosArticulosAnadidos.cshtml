@@ -1,0 +1,11 @@
+﻿@model IEnumerable<TuLista.Models.ArticulosConTipo>
+<h3>Últimos artículos añadidos</h3>
+@{ 
+    var i = 6;
+}
+@foreach (var a in Model)
+{
+    <label for="articulo @i"><input type="checkbox" id="articulo @i" name="articulo" value="@a.IdArticulo" />&nbsp;&nbsp; @a.nombreArticulo</label>
+    <br />
+    i++;
+}

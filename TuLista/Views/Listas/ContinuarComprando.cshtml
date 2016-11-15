@@ -1,0 +1,15 @@
+﻿@model IEnumerable<TuLista.Models.ArticulosConTipo>
+<h3>Todos</h3>
+<form action="/Listas/GuardarYContinuar">
+    @{
+        var i = 0;
+    }
+    @foreach (var a in Model)
+    {
+        <label for="articulo @i"><input type="checkbox" id="articulo @i" name="articulo" value="@a.IdArticulo" />&nbsp;&nbsp;@a.nombreArticulo</label>
+        <br />
+        i++;
+    }
+    <input type="submit" value="Guardar y continuar" />
+</form>
+<a href="/Listas/FinalizarLista">Finalizar</a>

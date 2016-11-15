@@ -1,0 +1,15 @@
+﻿
+@{
+    ViewBag.Title = "NuevoArticulo";
+}
+
+<h2>NuevoArticulo</h2>
+<form action="/Articulos/GuardarNuevoArticulo" method="post">
+    <label for="nombre">Nombre</label>
+    <input type="text" name="nombre" />
+    <br />
+    @Html.Action("ListaTiposSelect")
+    <br />
+    <input type="submit" value="Guardar" />
+</form>
+

@@ -1,0 +1,8 @@
+﻿@model IEnumerable<TuLista.Models.Usuarios>
+
+<h4>Usuarios con acceso a esta lista</h4>
+
+@foreach(var u in Model)
+{
+    <p>@u.email</p>
+}

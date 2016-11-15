@@ -1,0 +1,12 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Listas</h2>
+<hr />
+<button class="btn" onclick="window.location.href = '/Listas/CrearNuevaLista'"><span class="glyphicon glyphicon-arrow-right"></span>&nbsp;Nueva lista&nbsp;</button>
+@*<a href="/Listas/CrearNuevaLista">Nueva lista</a>*@
+<br />
+<br />
+@Html.Action("verListasActivas")

@@ -1,0 +1,24 @@
+﻿@model IEnumerable<TuLista.Models.ArticulosConTipo>
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+<a href="/Articulos/NuevoArticulo">Nuevo artículo</a>
+<br />
+<table class="table">
+    <tr>
+        <th>ID</th>
+        <th>Artículo</th>
+        <th>Tipo</th>
+    </tr>
+    @foreach(var item in Model)
+    {
+        <tr>
+            <td>@item.IdArticulo</td>
+            <td>@item.nombreArticulo</td>
+            <td>@item.nombreTipo</td>
+        </tr>
+    }
+</table>
+

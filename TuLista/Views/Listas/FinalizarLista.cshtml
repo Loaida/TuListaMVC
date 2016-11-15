@@ -1,0 +1,14 @@
+﻿
+@{
+    ViewBag.Title = "FinalizarLista";
+}
+
+<h2>Finalizar Lista</h2>
+<h4>Este es el resumen de tu lista, más adelante podrás modificarla.</h4>
+<hr />
+@Html.Action("VerTituloDeLista")
+@Html.Action("verUsuariosDeLista")
+@Html.Action("VerArticulosDeLista")
+<br />
+<a href="whatsapp://send?text= http://tulista.gear.host/Listas/FinalizarLista" data-action="share/whatsapp/share"><img border="0" src="~/Imagenes/unnamed.png" width="64px" height="64px"></a>
+

@@ -1,0 +1,7 @@
+﻿@model IEnumerable<TuLista.Models.CompraActiva>
+
+@foreach(var c in Model)
+{
+    <a href="/Listas/verDetallesDeLista?idLista=@c.idLista">@c.titulo</a>
+    <br />
+}
