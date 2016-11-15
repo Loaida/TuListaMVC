@@ -1,29 +1,53 @@
 ﻿@model IEnumerable<TuLista.Models.ArticulosConTipo>
 
-<p>Pulsar en la cruz roja para marcar como comprado</p>
+<p>Pulsar en la cruz roja para marcar como comprado. Si modificas la cantidad acuerdate de guardar con cada cambio.</p>
 <table class="table">
     <tr>
-        <th>ID</th>
         <th>Artículo</th>
-        <th>Tipo</th>
+        <th>Cantidad</th>
         <th>Estado</th>
     </tr>
-    @foreach(var a in Model)
+    @foreach (var a in Model)
     {
         <tr>
-            <td>@a.IdArticulo</td>
             <td>@a.nombreArticulo</td>
-            <td>@a.nombreTipo</td>
-            @{ 
+            <td>
+                @{
+                    if (Session["idArticulo"] != null)
+                    {
+                        if (Session["idArticulo"].ToString() == a.IdArticulo.ToString())
+                        {
+                            if (Session["AnadiendoCantidad"] != null)
+                            {
+                                @Html.Action("EditarCantidad")
+                            }
+                            else
+                            {
+                                @a.cantidad <a href="/Listas/editarCantidadV?idArticulo=@a.IdArticulo">Editar</a>
+                            }
+                        }
+                        else
+                        {
+                            @a.cantidad <a href="/Listas/editarCantidadV?idArticulo=@a.IdArticulo">Editar</a>
+                        }
+                    }
+                    else
+                    {
+                        @a.cantidad <a href="/Listas/editarCantidadV?idArticulo=@a.IdArticulo">Editar</a>
+                    }
+
+                }
+            </td>
+            @{
                 if (a.comprado == true)
                 {
-                    <td><img src="~/Imagenes/mcol_tick.png" width="30px" height="30px" /></td>
+                    <td><img src="~/Imagenes/mcol_tick.png" width="24px" height="24px" /></td>
                 }
                 else
                 {
-                    <td><a href="/Listas/MarcarArticuloComoComprado?idArticulo=@a.IdArticulo"><img src="~/Imagenes/mcol_cross.png" width="30px" height="30px" /></a></td>
+                    <td><a href="/Listas/MarcarArticuloComoComprado?idArticulo=@a.IdArticulo"><img src="~/Imagenes/mcol_cross.png" width="24px" height="24px" /></a></td>
                 }
             }
         </tr>
-    }
+                }
 </table>

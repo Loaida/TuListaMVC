@@ -366,6 +366,7 @@
     <Content Include="Views\Listas\verDetallesDeLista.cshtml" />
     <Content Include="Views\Listas\darPorFinalizadaLaLista.cshtml" />
     <Content Include="Views\Listas\editarLista.cshtml" />
+    <Content Include="Views\Listas\EditarCantidad.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

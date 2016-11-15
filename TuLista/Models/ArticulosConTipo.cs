@@ -11,5 +11,6 @@ namespace TuLista.Models
         public string nombreArticulo { get; set; }
         public string nombreTipo { get; set; }
         public bool? comprado { get; set; }
+        public string cantidad { get; set; }
     }
 }

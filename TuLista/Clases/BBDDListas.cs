@@ -105,7 +105,8 @@ namespace TuLista.Clases
                 ArticulosConTipo at = new ArticulosConTipo();
                 at.IdArticulo = a.Id;
                 at.nombreArticulo = a.Articulo;
-                at.comprado = (from ar in db.tabCompraArticulos where ar.idAritulo == a.Id select ar.Comprado).First();
+                at.cantidad = (from ar in db.tabCompraArticulos where ar.idCompra == idCompra && ar.idAritulo == a.Id select ar.Cantidad).First();
+                at.comprado = (from ar in db.tabCompraArticulos where ar.idCompra == idCompra && ar.idAritulo == a.Id select ar.Comprado).First();
                 at.nombreTipo = (from t in db.tabTipoArticulos where t.Id == a.IdTipo select t.Tipo).First();
                 listA.Add(at);
             }
@@ -121,12 +122,21 @@ namespace TuLista.Clases
             }
             db.SaveChanges();
         }
-        public void marcarArticuloComprado(int idArticulo)
+        public void marcarArticuloComprado(int idArticulo, int idCompra)
         {
-            var articulo = from a in db.tabCompraArticulos where a.idAritulo == idArticulo select a;
+            var articulo = from a in db.tabCompraArticulos where a.idCompra == idCompra && a.idAritulo == idArticulo select a;
             foreach(tabCompraArticulos a in articulo)
             {
                 a.Comprado = true;
+            }
+            db.SaveChanges();
+        }
+        public void cambiarCantidad(int idArticulo, int idCompra, string cantidad)
+        {
+            var articulo = from a in db.tabCompraArticulos where a.idCompra == idCompra && a.idAritulo == idArticulo select a;
+            foreach (tabCompraArticulos a in articulo)
+            {
+                a.Cantidad = cantidad;
             }
             db.SaveChanges();
         }

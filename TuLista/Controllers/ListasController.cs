@@ -10,10 +10,13 @@ namespace TuLista.Controllers
 {
     public class ListasController : Controller
     {
+        //*********************REGION BBDD************************************
+        #region BBDD
         BBDDListas db = new BBDDListas();
         BBDDUsuarios db2 = new BBDDUsuarios();
         BBDDArticulos db3 = new BBDDArticulos();
         BBDDTiposDeArticulos db4 = new BBDDTiposDeArticulos();
+        #endregion
         // GET: Listas
 
         //*********************REGION DE INICIO******************************
@@ -158,7 +161,28 @@ namespace TuLista.Controllers
         {
             int idLista = int.Parse(Session["idCompra"].ToString());
             int idArticulo = int.Parse(Request.QueryString["idArticulo"]);
-            db.marcarArticuloComprado(idArticulo);
+            db.marcarArticuloComprado(idArticulo, idLista);
+            return Redirect("/Listas/verDetallesDeLista?idLista=" + idLista);
+        }
+        public ActionResult editarCantidadV()
+        {
+            int idArticulo = int.Parse(Request.QueryString["idArticulo"]);
+            int idLista = int.Parse(Session["idCompra"].ToString());
+            Session["idArticulo"] = idArticulo;
+            Session["AnadiendoCantidad"] = 1;
+            return Redirect("/Listas/verDetallesDeLista?idLista=" + idLista);
+        }
+        public ActionResult EditarCantidad()
+        {
+            Session["AnadiendoCantidad"] = 1;
+            return PartialView();
+        }
+        public ActionResult guardarCantidad(string cantidad)
+        {
+            int idArticulo = int.Parse(Session["idArticulo"].ToString());
+            int idLista = int.Parse(Session["idCompra"].ToString());
+            db.cambiarCantidad(idArticulo, idLista, cantidad);
+            Session["AnadiendoCantidad"] = null;
             return Redirect("/Listas/verDetallesDeLista?idLista=" + idLista);
         }
         #endregion
