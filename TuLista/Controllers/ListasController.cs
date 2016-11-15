@@ -16,6 +16,7 @@ namespace TuLista.Controllers
         BBDDTiposDeArticulos db4 = new BBDDTiposDeArticulos();
         // GET: Listas
 
+        //*********************REGION DE INICIO******************************
         #region inicio
         public ActionResult Index()
         {
@@ -32,6 +33,8 @@ namespace TuLista.Controllers
             return PartialView(listCA);
         }
         #endregion
+
+        //*********************REGION DE NUEVA LISTA*************************
         #region Nueva Lista
         public ActionResult CrearNuevaLista()
         {
@@ -104,6 +107,8 @@ namespace TuLista.Controllers
             return PartialView(listA);
         }
         #endregion
+
+        //*********************REGIÓN DE DETALLES DE LISTA*******************
         #region Detalles de lista
         public ActionResult verDetallesDeLista()
         {
@@ -114,6 +119,8 @@ namespace TuLista.Controllers
         }
 
         #endregion
+
+        //*********************REGIÓN DE FINALIZAR LISTA*********************
         #region Dar lista por finalizada
         public ActionResult darPorFinalizadaLaLista()
         {
@@ -129,6 +136,8 @@ namespace TuLista.Controllers
             return Redirect("/Listas/Index");
         }
         #endregion
+
+        //*********************REGIÓN DE EDITAR LISTA************************
         #region Editar lista
         public ActionResult editarLista()
         {

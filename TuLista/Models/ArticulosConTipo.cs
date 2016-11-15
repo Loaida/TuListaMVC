@@ -10,5 +10,6 @@ namespace TuLista.Models
         public int? IdArticulo { get; set; }
         public string nombreArticulo { get; set; }
         public string nombreTipo { get; set; }
+        public bool comprado { get; set; }
     }
 }

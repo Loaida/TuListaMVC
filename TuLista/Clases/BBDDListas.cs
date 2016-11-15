@@ -81,6 +81,7 @@ namespace TuLista.Clases
                 tac.idAritulo = articulo[i];
                 tac.idCompra = idLista;
                 tac.Cantidad = "-";
+                tac.Comprado = false;
                 db.tabCompraArticulos.Add(tac);
             }
             db.SaveChanges();

@@ -5,6 +5,7 @@
         <th>ID</th>
         <th>Artículo</th>
         <th>Tipo</th>
+        <th>Estado</th>
     </tr>
     @foreach(var a in Model)
     {
@@ -12,6 +13,16 @@
             <td>@a.IdArticulo</td>
             <td>@a.nombreArticulo</td>
             <td>@a.nombreTipo</td>
+            @{ 
+                if (a.comprado == true)
+                {
+                    <td><img src="~/Imagenes/mcol_tick.png" width="54px" height="54px"/></td>
+                }
+                else
+                {
+                    <td><img src="~/Imagenes/mcol_cross.png" width="54px" height="54px" /></td>
+                }
+            }
         </tr>
     }
 </table>
