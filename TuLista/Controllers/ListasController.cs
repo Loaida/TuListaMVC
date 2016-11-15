@@ -154,6 +154,13 @@ namespace TuLista.Controllers
             }
             return Redirect("/Listas/verDetallesDeLista?idLista="+idCompra);
         }
+        public ActionResult MarcarArticuloComoComprado()
+        {
+            int idLista = int.Parse(Session["idCompra"].ToString());
+            int idArticulo = int.Parse(Request.QueryString["idArticulo"]);
+            db.marcarArticuloComprado(idArticulo);
+            return Redirect("/Listas/verDetallesDeLista?idLista=" + idLista);
+        }
         #endregion
     }
 }

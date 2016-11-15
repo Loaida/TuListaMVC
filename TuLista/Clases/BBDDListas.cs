@@ -105,6 +105,7 @@ namespace TuLista.Clases
                 ArticulosConTipo at = new ArticulosConTipo();
                 at.IdArticulo = a.Id;
                 at.nombreArticulo = a.Articulo;
+                at.comprado = (from ar in db.tabCompraArticulos where ar.idAritulo == a.Id select ar.Comprado).First();
                 at.nombreTipo = (from t in db.tabTipoArticulos where t.Id == a.IdTipo select t.Tipo).First();
                 listA.Add(at);
             }
@@ -117,6 +118,15 @@ namespace TuLista.Clases
             foreach(tabCompra l in lista)
             {
                 l.Estado = false;
+            }
+            db.SaveChanges();
+        }
+        public void marcarArticuloComprado(int idArticulo)
+        {
+            var articulo = from a in db.tabCompraArticulos where a.idAritulo == idArticulo select a;
+            foreach(tabCompraArticulos a in articulo)
+            {
+                a.Comprado = true;
             }
             db.SaveChanges();
         }

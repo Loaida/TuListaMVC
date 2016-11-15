@@ -1,5 +1,6 @@
 ﻿@model IEnumerable<TuLista.Models.ArticulosConTipo>
 
+<p>Pulsar en la cruz roja para marcar como comprado</p>
 <table class="table">
     <tr>
         <th>ID</th>
@@ -16,11 +17,11 @@
             @{ 
                 if (a.comprado == true)
                 {
-                    <td><img src="~/Imagenes/mcol_tick.png" width="54px" height="54px"/></td>
+                    <td><img src="~/Imagenes/mcol_tick.png" width="30px" height="30px" /></td>
                 }
                 else
                 {
-                    <td><img src="~/Imagenes/mcol_cross.png" width="54px" height="54px" /></td>
+                    <td><a href="/Listas/MarcarArticuloComoComprado?idArticulo=@a.IdArticulo"><img src="~/Imagenes/mcol_cross.png" width="30px" height="30px" /></a></td>
                 }
             }
         </tr>
