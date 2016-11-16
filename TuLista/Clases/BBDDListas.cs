@@ -140,5 +140,24 @@ namespace TuLista.Clases
             }
             db.SaveChanges();
         }
+        public List<CompraActiva> verListasFinalizadas(int idUsuario)
+        {
+            List<CompraActiva> ListC = new List<CompraActiva>();
+            CompraActiva ca;
+            var comprasActivas = from c in db.tabCompra
+                                 join u in db.tabUsuarioCompra
+                                 on c.Id equals u.IdCompra
+                                 where u.IdUsuario == idUsuario
+                                 && c.Estado == false
+                                 select c;
+            foreach (var c in comprasActivas)
+            {
+                ca = new CompraActiva();
+                ca.idLista = c.Id;
+                ca.titulo = c.Titulo;
+                ListC.Add(ca);
+            }
+            return ListC;
+        }
     }
 }

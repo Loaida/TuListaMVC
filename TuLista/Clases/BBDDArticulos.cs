@@ -49,7 +49,12 @@ namespace TuLista.Clases
         public List<ArticulosConTipo> getUltimosAnadidos()
         {
             List<ArticulosConTipo> listA = new List<ArticulosConTipo>();
-            var articulosMasUsados = (from a in db.tabArticulo orderby a.Id descending select a).Take(10);
+            var articulosMasUsados = (from a in db.tabArticulo
+                                      where !((from ar in db.tabArticulo
+                                               orderby ar.usos descending
+                                               select ar.Id).Take(5)).Contains(a.Id)
+                                      orderby a.Id descending
+                                      select a).Take(10);
             foreach (var a in articulosMasUsados)
             {
                 ArticulosConTipo at = new ArticulosConTipo();

@@ -25,7 +25,7 @@ namespace TuLista.Controllers
                 //guardamos su id en una variable de sesión
                 Session["idUsuario"] = idUsuario;
                 //redireccionamos a la pagina principal
-                return Redirect("/Home/Index");
+                return Redirect("/Listas/Index");
             }
             //si nos ha devuelto un 0
             else

@@ -18,7 +18,6 @@ namespace TuLista.Controllers
         BBDDTiposDeArticulos db4 = new BBDDTiposDeArticulos();
         #endregion
         // GET: Listas
-
         //*********************REGION DE INICIO******************************
         #region inicio
         public ActionResult Index()
@@ -34,6 +33,12 @@ namespace TuLista.Controllers
             int idUsuario = int.Parse(Session["idUsuario"].ToString());
             List<CompraActiva> listCA = db.verCompraActiva(idUsuario);
             return PartialView(listCA);
+        }
+        public ActionResult verListasAcabadas()
+        {
+            int idUsuario = int.Parse(Session["idUsuario"].ToString());
+            List<CompraActiva> listcNA = db.verListasFinalizadas(idUsuario);
+            return PartialView(listcNA);
         }
         #endregion
 
